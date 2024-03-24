@@ -50,6 +50,11 @@ $ ./run.sh
 
 Open your web browser and go to http://localhost:5000
 
+
+## Screenshot:
+
+<p align="center"><img width="30%" src="media/preview.jpg"></p>
+
 ## Contributing:
 
 - You know the deal.
