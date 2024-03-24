@@ -101,7 +101,6 @@ async function fetchData() {
     }
 }
 
-// Function to generate tracks
 async function generateTracks() {
     try {
         displayLoadingBar();
@@ -109,7 +108,7 @@ async function generateTracks() {
         let tracks = data.reduce((totalTracks, playlist) => totalTracks.concat(playlist.tracks), []);
         tracks = shuffleArray(tracks).slice(0, 25);
         const container = document.getElementById('container');
-        container.innerHTML = ''; // Clear existing tracks
+        container.innerHTML = '';
 
         tracks.forEach(track => {
             const div = document.createElement('div');
@@ -125,11 +124,12 @@ async function generateTracks() {
             });
             div.addEventListener('mouseleave', () => {
                 if (currentAudio) {
-                    div.classList.add('hovered');
+                    div.style.background = getRandomColor();
                     currentAudio.pause();
                     audioCtx.close();
                     const setSpotifyLink = document.getElementById('spotify');
                     setSpotifyLink.href = track.track_url;
+                    lastHoveredDiv = div;
                 }
             });
             document.body.addEventListener('click', function() {
@@ -145,10 +145,8 @@ async function generateTracks() {
     }
 }
 
-// Call generateTracks on page load
 window.onload = generateTracks;
 
-// Event listener for the "SET" button
 const setButton = document.getElementById('set');
 setButton.addEventListener('click', generateTracks);
 
