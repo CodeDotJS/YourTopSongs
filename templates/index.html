@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Your Top Songs - Spotify. Years Of Spotify">
+    <meta name="keywords" content="spotify, playlist, songs, music, year, wrapped, archive, play, fun">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourtopsongs.vercel.app">
+    <meta property="og:description" content="Your Top Songs - Spotify!">
+    <meta property="og:site_name" content="YourTopSongs">
+    <meta property="og:locale" content="en_US"> <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="YourTopSongs">
+    <meta name="twitter:title" content="YourTopSongs - Spotify">
+    <meta name="twitter:description" content="Wrapped of Spotify Wrapped!">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Your Top Songs 🎧 Spotify</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="loadingBarContainer">
+        <div id="loadingBar"></div>
+    </div>
+    <div id="container">
+        <div id="errorMessage"></div>
+    </div>
+    <div class="controls">
+        <button id="refresh">SHUFFLE IN</button>
+        <a id="spotify">PLAY ON 🎧</a>
+        <button id="set">SHUFFLE OUT</button>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
