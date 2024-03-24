@@ -80,7 +80,9 @@ while True:
     if offset >= total_playlists:
         break
 
-with open('../data/playlist_data.json', 'w') as json_file:
+data_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data', 'playlist_data.json'))
+
+with open(data_path, 'w') as json_file:
     json.dump(playlist_data, json_file, indent=4)
 
 print("Saved!")
