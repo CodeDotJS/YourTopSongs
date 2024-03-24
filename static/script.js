@@ -125,6 +125,7 @@ async function generateTracks() {
             });
             div.addEventListener('mouseleave', () => {
                 if (currentAudio) {
+                    div.classList.add('hovered');
                     currentAudio.pause();
                     audioCtx.close();
                     const setSpotifyLink = document.getElementById('spotify');
